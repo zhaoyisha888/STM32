@@ -1,0 +1,83 @@
+# 这个.gitignore文件可用于STM32项目的开发，包含了：
+
+# Keil MDK-ARM 相关的临时文件和生成文件
+# IAR EWARM IDE相关的配置和临时文件
+# STM32CubeIDE 相关的文件和目录
+# 通用的构建输出目录
+# 目标文件、库文件和可执行文件
+# 调试文件
+# 备份文件
+# IDE配置文件（VS Code和JetBrains）
+# 操作系统生成的临时文件
+
+# Keil MDK-ARM
+*.uvguix.*
+*.uvoptx
+*.uvprojx
+*.scvd
+*.lst
+*.map
+*.sct
+*.axf
+*.htm
+*.lnp
+*.dep
+*.crf
+*.d
+*.o
+*.hex
+*.bin
+
+# IAR EWARM
+*.ewd
+*.ewp
+*.ewt
+*.eww
+Debug/
+settings/
+
+# STM32CubeIDE
+.settings/
+Debug/
+Release/
+.launch/
+*.ld
+
+# Build directories
+build/
+*/build/
+
+# Object files
+*.obj
+*.elf
+
+# Libraries
+*.lib
+*.a
+
+# Shared objects
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debug files
+*.dSYM/
+
+# Backup files
+*.bak
+*~
+
+# IDE specific files
+.vscode/
+.idea/
+*.ioc.bak
+
+# OS specific
+.DS_Store
+Thumbs.db
