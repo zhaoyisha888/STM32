@@ -62,6 +62,10 @@
         - [SWD方式（推荐）](#swd方式推荐)
         - [JTAG方式](#jtag方式)
       - [f. 注意事项](#f-注意事项)
+  - [**VSCode开发配置**](#vscode开发配置)
+    - [1. c\_cpp\_properties.json配置](#1-c_cpp_propertiesjson配置)
+    - [2. 配置说明](#2-配置说明)
+    - [3. 使用注意](#3-使用注意)
 
 
 ## **简介**
@@ -528,3 +532,55 @@ ii. **数据传输**
 3. 晶振电路布线需要短而对称
 4. 复位电路的电容必须靠近NRST引脚
 5. 调试接口的GND必须连接
+
+
+## **VSCode开发配置**
+
+### 1. c_cpp_properties.json配置
+```json
+      // ...existing code...
+      
+      "includePath": [
+        "${workspaceFolder}/**",
+        "D:\\code\\STM32\\experiments\\2-1 STM32ProjectTemplate\\Library\\**",
+        "D:\\code\\STM32\\experiments\\2-1 STM32ProjectTemplate\\Start\\**"
+      ],
+      "defines": [
+        "__CC_ARM__",  // 让这些代码生效
+        "__CC_ARM",    // 旧版生效语句,本项目应用此语句，谨慎删除
+        "__CORTEX_M3", // 芯片内核
+        "__MICROLIB",  // 库配置
+        "USE_STDPERIPH_DRIVER",  //激活stm32f10x文件的代码行#include "stm32f10x_conf.h"
+        "STM32F10X_MD",  //芯片型号
+        "__IO=volatile",   //变量修饰
+        "__I=volatile const"
+      ],
+      "compilerPath": "自己的文件路径\\Keil_c51\\ARM\\ARMCC\\bin\\armcc.exe",
+
+      // ...existing code...
+
+```
+
+### 2. 配置说明
+a. **includePath配置**
+   - 工作空间根目录
+   - 库函数目录
+   - 启动文件目录
+
+b. **defines配置**
+   - 编译器相关：`__CC_ARM__`, `__CC_ARM`,使用旧版表述部分代码才能生效
+   - 内核定义：`__CORTEX_M3`
+   - 库函数配置：`USE_STDPERIPH_DRIVER` ，有此宏定义才能激活stm32f10x_conf.h文件
+   - 芯片型号：`STM32F10X_MD`
+   - 变量修饰：`__IO`, `__I` ，否则编辑器会有红色下划线错误提示
+
+c. **编译器设置**
+   - 使用Keil MDK的ARM编译器，有没有都无所谓
+   - 默认C/C++标准
+   - x86架构模式
+
+### 3. 使用注意
+1. 路径要根据实际项目位置调整
+2. 确保Keil MDK安装路径正确
+3. 必要的宏定义不能缺少
+4. 保持与Keil工程配置一致

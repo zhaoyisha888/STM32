@@ -10,7 +10,24 @@
 # IDE配置文件（VS Code和JetBrains）
 # 操作系统生成的临时文件
 
-# Keil MDK-ARM
+# Keil MDK-ARM Project Folders
+DebugConfig/
+Objects/
+Listings/
+
+## Specific files in these folders
+**/DebugConfig/*.dbgconf
+**/Objects/*.crf
+**/Objects/*.d
+**/Objects/*.o
+**/Objects/*.dep
+**/Objects/*.axf
+**/Objects/*.htm
+**/Objects/*.lnp
+**/Objects/*.sct
+**/Listings/*.map
+**/Listings/*.lst
+
 *.uvguix.*
 *.uvoptx
 *.uvprojx
