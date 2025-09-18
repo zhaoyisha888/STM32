@@ -86,6 +86,9 @@ STM32Project/
 │   ├── stm32f10x_usart.c/h    # USART串口通信
 │   └── stm32f10x_wwdg.c/h     # WWDG窗口看门狗
 │
+├── Common/                     # 复用公共代码
+│   └── ·····.c/h              # 各项目通用函数代码和声明
+│
 ├── User/                       # 用户代码
 │   ├── main.c                 # 主程序入口
 │   ├── stm32f10x_conf.h       # 库函数配置文件

@@ -542,8 +542,9 @@ ii. **数据传输**
       
       "includePath": [
         "${workspaceFolder}/**",
-        "D:\\code\\STM32\\experiments\\2-1 STM32ProjectTemplate\\Library\\**",
-        "D:\\code\\STM32\\experiments\\2-1 STM32ProjectTemplate\\Start\\**"
+        "D:\\code\\STM32\\experiments\\项目名称\\Library\\**",
+        "D:\\code\\STM32\\experiments\\项目名称\\Start\\**",
+        "D:\\code\\STM32\\experiments\\项目名称\\Common\\**"
       ],
       "defines": [
         "__CC_ARM__",  // 让这些代码生效
@@ -566,6 +567,7 @@ a. **includePath配置**
    - 工作空间根目录
    - 库函数目录
    - 启动文件目录
+**新建工程后需要更改项目名称，否则VScode可能无法识别文件名和标识符**
 
 b. **defines配置**
    - 编译器相关：`__CC_ARM__`, `__CC_ARM`,使用旧版表述部分代码才能生效
